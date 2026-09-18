@@ -1,4 +1,3 @@
-using Unity.Collections;
 using UnityEngine;
 
 public class oscillate : MonoBehaviour
@@ -28,5 +27,13 @@ public class oscillate : MonoBehaviour
         
 
         transform.Translate(x,0,0);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            Debug.Log("You lose");
+        }
     }
 }

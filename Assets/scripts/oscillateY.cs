@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class oscillateY : MonoBehaviour
@@ -27,5 +28,13 @@ public class oscillateY : MonoBehaviour
         }
 
         transform.Translate(0,y,0);
+    }
+
+     void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            Debug.Log("You lose");
+        }
     }
 }
